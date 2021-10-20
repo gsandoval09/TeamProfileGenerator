@@ -1,52 +1,78 @@
-const Employee = require("../Lib/Employee");
-//test to see if message shows in end product
+const Intern = require("../lib/Intern");
 
-test("See if employee function works", () => {
-const e = new Employee ();
-exact(typeof(e)).toBe("object");
-});
+// const Employee = require("../Lib/Employee");
+// //test to see if message shows in npm test
 
-test("Write name of employee here", () => {
-    const name ="Kakashi";
-    const e = new Employee(name);
-    expect(e.name) .toBe(name);
-});
 
-test("id of person shows here", () => {
-    const testValue = 100;
-    const e = new Employee("Person", testValue);
-    expect(e.id).toBe(testValue);
-});
-
-test("test to get employee email", () => {
-    const testValue ="test@test.com"
-    const e = new Employee("Person", 1, testValue);
-    expect(e.getEmail()).toBe(testValue);
-});
-
-test("get name of employee here()", () => {
-    const testValue = "Kakashi";
-    const e = new Employee(testValue);
-    expect(e.getName()).toBe(testValue);
-});
-
-test("Can get id of employee here()", () => {
-    const testValue = 100;
-    const e = new Employee("Person", testValue);
-    expect(e.getId()).toBe(testValue);
-});
-
-test("Can get email by email function()", () => {
-    const testValue = "test@test.com";
-    const e = new Employee("Person", 1, testValue);
-    expect(e.getEmail()).toBe(testValue);
-});
-
-test("return \"Employee\"", () => {
-    const testValue = "Employee"
-    const e = new Employee("Kakashi", 1, "test@test.com");
+test("getRole() should return \"Intern\"", () => {
+    const testValue = "Intern";
+    const e = new Intern("Person", 1, "test@test.com", "Fox Lane");
     expect(e.getRole()).toBe(testValue);
-});
+  });
+
+  test("Can set school data via constructor", () => {
+    const testValue = "Fox Lane";
+    const e = new Intern("Person", 1, "test@test.com", testValue);
+    expect(e.school).toBe(testValue);
+  });
+
+  
+test("Can info from getSchool()", () => {
+    const testValue = "Fox Lane";
+    const e = new Intern("Person", 1, "test@test.com", testValue);
+    expect(e.getSchool()).toBe(testValue);
+  });
+
+
+
+
+// test("See if employee function works", () => {
+
+// const e = new Employee ();
+// exact(tygit apeof(e)).toBe("object");
+// });
+
+// test("Write name of employee here", () => {
+//     const name ="Kakashi";
+//     const e = new Employee(name);
+//     expect(e.name).toBe(name);
+// });
+
+// test("id of person shows here", () => {
+//     const testValue = 100;
+//     const e = new Employee("Person", testValue);
+//     expect(e.id).toBe(testValue);
+// });
+
+// test("test to get employee email", () => {
+//     const testValue ="test@test.com"
+//     const e = new Employee("Person", 1, testValue);
+//     expect(e.getEmail()).toBe(testValue);
+// });
+
+// test("get name of employee here()", () => {
+//     const testValue = "Kakashi";
+//     const e = new Employee(testValue);
+//     expect(e.getName()).toBe(testValue);
+// });
+
+// test("Can get id of employee here()", () => {
+//     const testValue = 100;
+//     const e = new Employee("Person", testValue);
+//     expect(e.getId()).toBe (testValue);
+// });
+
+// test("Can get email by email function()", () => {
+//     const testValue = "test@test.com";
+//     const e = new Employee("Person", 1, testValue);
+//     expect(e.getEmail()).toBe(testValue);
+// });
+
+// test("return \"Employee\"", () => {
+//     const testValue = "Employee"
+//     const e = new Employee("Kakashi", 1, "test@test.com");
+//     expect(e.getRole()).toBe(testValue);
+// });
 
 
 
